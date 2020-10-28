@@ -10,16 +10,18 @@ namespace App.Controllers
 {
     public class UsersController : Controller
     {
-        private IUserRepository repository;
+        private readonly IUserRepository repository;
+        private readonly IMapper mapper;
 
-        public UsersController(IUserRepository repository)
+        public UsersController(IUserRepository repository, IMapper mapper)
         {
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
         public IActionResult Index()
         {
-            return View(repository.GetAll());
+            return View(mapper.ToUserDtos(repository.GetAll()));
         }
 
         [HttpGet]
