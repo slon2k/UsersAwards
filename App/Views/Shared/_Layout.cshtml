@@ -3,11 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Awards Application</title>
+    <title>@ViewData["Title"] - UserAwardApp</title>
 </head>
 <body>
-    <div>
-         @RenderBody()
-    </div>
+    <header>
+        <a asp-action="Index" asp-controller="Home">Home</a>
+        <a asp-action="Index" asp-controller="Users">Users</a>
+        <a asp-action="Index" asp-controller="Awards">Awards</a>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
 </body>
 </html>

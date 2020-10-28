@@ -1,0 +1,23 @@
+﻿@model User
+    <h2>Edit user:</h2>
+    <hr />
+    <form asp-action="Edit" asp-controller="Users" asp-antiforgery="true" method="post">
+        <input asp-for="Id" hidden/>
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+        </div>
+        <div>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" />
+        </div>
+        <div>
+            <label asp-for="BirthDate"></label>
+            <input asp-for="BirthDate" />
+        </div>
+        <hr />
+        <div>
+            <input type="submit" value="Save" />
+            <a asp-action="Index" , asp-controller="Users">Cancel</a>
+        </div>
+    </form>

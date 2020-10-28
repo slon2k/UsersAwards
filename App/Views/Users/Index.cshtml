@@ -1,0 +1,13 @@
+﻿@model IEnumerable<User>
+
+<h3>Users:</h3>
+<ol>
+@{
+    foreach (var item in Model)
+    {
+    <li>
+        @item.FirstName @item.LastName <a asp-action="Edit" asp-controller="Users" asp-route-id="@item.Id">Edit</a>
+    </li>
+    } 
+}
+</ol>

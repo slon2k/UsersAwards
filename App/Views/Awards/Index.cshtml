@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Award>
+
+<h3>Awards:</h3>
+<ol>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.Title - @item.Description  <a asp-action="Edit" asp-controller="Awards" asp-route-id="@item.Id">Edit</a>
+        </li>
+    }
+</ol>
+    
