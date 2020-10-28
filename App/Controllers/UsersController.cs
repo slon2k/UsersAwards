@@ -46,6 +46,7 @@ namespace App.Controllers
             }
             user.FirstName = userUpdate.FirstName;
             user.LastName = userUpdate.LastName;
+            user.BirthDate = userUpdate.BirthDate;
 
             repository.Update(user);
 
