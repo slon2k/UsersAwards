@@ -34,6 +34,19 @@ namespace App.Controllers
             return View(award);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Award award)
+        {
+            repository.Add(award);
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public IActionResult Delete(int id)
         {

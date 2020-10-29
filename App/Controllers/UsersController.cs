@@ -50,6 +50,19 @@ namespace App.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(User user)
+        {
+            repository.Add(user);
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public IActionResult Edit(User userUpdate)
         {
