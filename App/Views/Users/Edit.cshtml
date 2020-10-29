@@ -18,6 +18,7 @@
         <hr />
         <div>
             <input type="submit" value="Save" />
-            <a asp-action="Index" , asp-controller="Users">Cancel</a>
+            <input type="submit" value="Delete" asp-action="Delete" asp-controller="Users" asp-route-id=@Model.Id/>
+            <a asp-action="Index" asp-controller="Users">Cancel</a>
         </div>
     </form>

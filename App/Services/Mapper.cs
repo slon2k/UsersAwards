@@ -12,10 +12,12 @@ namespace App.Services
     {
         public UserDto ToUserDto(User user)
         {
-            var userDto = new UserDto();
-            userDto.Id = user.Id;
-            userDto.Name = $"{user.FirstName} {user.LastName}";
-            
+            var userDto = new UserDto
+            {
+                Id = user.Id,
+                Name = $"{user.FirstName} {user.LastName}"
+            };
+
             var currentDate = DateTime.Now;
             var birthDate = user.BirthDate;           
             userDto.Age = currentDate.Year - birthDate.Year;

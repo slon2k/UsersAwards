@@ -10,7 +10,7 @@ namespace App.Data
 {
     public class Repository<T> : IRepository<T> where T : EntityBase
     {
-        private AppDbContext context;
+        private readonly AppDbContext context;
 
         public Repository(AppDbContext context)
         {

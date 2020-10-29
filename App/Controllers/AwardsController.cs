@@ -35,6 +35,20 @@ namespace App.Controllers
         }
 
         [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var award = repository.GetById(id);
+            if (award == null)
+            {
+                return RedirectToAction("AwardNotFound");
+            }
+
+            repository.Delete(award);
+            
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public IActionResult Edit(Award awardUpdate)
         {
             var award = repository.GetById(awardUpdate.Id);
