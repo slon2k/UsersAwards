@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20201027123701_SeedingData.cs" />
     <Compile Remove="Migrations\20201027123701_SeedingData.Designer.cs" />
+    <Compile Remove="Migrations\20201030153634_Image-Created.cs" />
+    <Compile Remove="Migrations\20201030153634_Image-Created.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
