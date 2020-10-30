@@ -37,6 +37,33 @@ namespace App.Controllers
         }
 
         [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var user = repository.GetById(id);
+            if (user == null)
+            {
+                return RedirectToAction("UserNotFound");
+            }
+
+            repository.Delete(user);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(User user)
+        {
+            repository.Add(user);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public IActionResult Edit(User userUpdate)
         {
             var user = repository.GetById(userUpdate.Id);

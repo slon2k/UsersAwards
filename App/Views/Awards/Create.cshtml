@@ -1,7 +1,8 @@
 ﻿@model Award
-<h2>Edit award:</h2>
+
+<h2>Create award:</h2>
 <hr />
-<form asp-action="Edit" asp-controller="Awards" asp-antiforgery="true" method="post">
+<form asp-action="Create" asp-controller="Awards" asp-antiforgery="true" method="post">
     <input asp-for="Id" hidden />
     <div>
         <label asp-for="Title"></label>
@@ -14,7 +15,6 @@
     <hr />
     <div>
         <input type="submit" value="Save" />
-        <input type="submit" value="Delete" asp-action="Delete" asp-controller="Awards" asp-route-id=@Model.Id />
         <a asp-action="Index" asp-controller="Awards">Cancel</a>
     </div>
 </form>
