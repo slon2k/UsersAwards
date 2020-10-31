@@ -19,6 +19,7 @@ namespace App.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
+            base.OnModelCreating(modelBuilder);            
             modelBuilder.Entity<User>().HasData(
                 new User(){ FirstName = "Bill", LastName = "Gates", BirthDate = new DateTime(1958, 10, 28), Id = 1 },
                 new User(){ FirstName = "Severus", LastName = "Snape", BirthDate = new DateTime(1960, 01, 09), Id = 2 },

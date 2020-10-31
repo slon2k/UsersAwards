@@ -22,5 +22,7 @@ namespace App.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
+        public virtual Image Image { get; set; }
+        public int? ImageId { get; set; }
     }
 }
