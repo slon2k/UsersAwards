@@ -18,8 +18,11 @@ namespace App.Services
         public string SaveFile(IFormFile file, string folder = "uploads")
         {
             var uploadPath = Path.Combine(env.WebRootPath, folder);
+            
             if (!Directory.Exists(uploadPath))
+            {
                 Directory.CreateDirectory(uploadPath);
+            }
 
             var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
             var filePath = Path.Combine(uploadPath, fileName);

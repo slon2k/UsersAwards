@@ -31,6 +31,7 @@ namespace App
             services.AddControllersWithViews();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAwardRepository, AwardRepository>();
+            services.AddScoped<IImageRepository, ImageRepository>();
             services.AddScoped<IMapper, Mapper>();
         }
 
